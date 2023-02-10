@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 1rem;
+  background-color: #1d3f39;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo h4 {
+  font-size: 1.5rem;
+}
+
+.red {
+  color: #e6e3d4;
+}
+
+.navlinks {
+  display: flex;
+}
+
+.navlinks ul {
+  display: flex;
+}
+
+.navlinks ul li {
+  list-style: none;
+  padding: 1rem;
+}
+
+.navlinks ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.navlinks ul li a:hover {
+  color: #1d3f39;
+}
+
+.menu {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  /* navbar */
+
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navlinks {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .navlinks.active {
+    height: 25rem;
+  }
+
+  .navlinks ul {
+    display: block;
+    width: fit-content;
+    opacity: 0;
+  }
+
+  .navlinks ul li {
+    padding: 0.75rem 1;
+  }
+
+  .navlinks.active ul {
+    opacity: 1;
+    animation: text 2s;
+  }
+
+  @keyframes text {
+    0% {
+      transform: translateX(-100px);
+    }
+
+    100% {
+      transform: translateX(1px);
+    }
+  }
+
+  .menu {
+    display: block;
+  }
+}
+
+/* Our working process start  */
+.work-container {
+  width: 100%;
+  display: flex;
+  padding: 2rem;
+  justify-content: space-between;
+}
+
+.work-card {
+  width: 33.3%;
+  /* background-color: #e6e3d4; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2.5rem;
+}
+
+.work-img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: #1d3f39;
+  /* padding: 1rem auto; */
+  margin-bottom: 1rem;
+}
+
+.work-img i {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  margin: 2.25rem 1.75rem;
+}
+
+.work-head h4 {
+  font-size: 1rem;
+}
+
+.work-para p {
+  font-size: 0.75rem;
+  text-align: center;
+}
+/* Our working process end */
+
+@media (max-width: 768px) {
+  .work-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .work-card {
+    width: 100%;
+  }
+}
