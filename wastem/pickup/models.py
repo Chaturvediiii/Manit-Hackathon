@@ -18,6 +18,7 @@ class PickupRequest(models.Model):
     # CHOICES = [('R','recyclable'),('NR','non-recyclable'),('none','none')]
     # type = models.CharField(max_length=10,choices= CHOICES,default='none')
     description = models.CharField(max_length=200, default='none')
+    phone_number = models.CharField(max_length=20,default='+91')
     status = models.CharField(max_length=20, default='pending')
 
     def __str__(self):

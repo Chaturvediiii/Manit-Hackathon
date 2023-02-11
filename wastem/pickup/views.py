@@ -1,16 +1,21 @@
 from twilio.rest import Client
-from django.shortcuts import render, redirect , HttpResponse
+from django.shortcuts import render, redirect, HttpResponse
 from .models import Location, PickupRequest
 from .forms import PickupRequestForm
 
+
 def send_sms(request):
-    client = Client('AC916570d285355980fa8406cba9c38f42','14eaf82efb0c8b93d308bebdf9147698')
-    message = client.messages.create(
-        to='+918719062445',
+    client = Client('AC916570d285355980fa8406cba9c38f42',
+                    '69122bb98b474f4d02971e829f72ed42')
+    if request.method == 'POST':
+        phone_number = request.POST.getlist('phone_number')
+        message = client.messages.create(
+        to=(phone_number),
         from_=+12173878678,
         body='Your pickup has been scheduled!'
     )
     return HttpResponse('SMS sent!')
+
 
 def create_pickup_request(request):
     if request.method == 'POST':
@@ -18,7 +23,7 @@ def create_pickup_request(request):
         if form.is_valid():
             pickup_request = form.save()
             send_sms(request)
-            return redirect('confirmation.html', pickup_request.id)
+            return render(request, 'pickup/confirmation.html')
     else:
         form = PickupRequestForm()
     return render(request, 'pickup/create_request.html', {'form': form})
@@ -45,8 +50,6 @@ def location(request):
             return redirect('user/profile.html', {'form': form})
 
 
-
-
 # def type(request):
 #     if request.method == 'POST':
 #         form = type(request.POST)
@@ -56,5 +59,3 @@ def location(request):
 #         else:
 #             form = type()
 #             return redirect('user/profile.html', {'form': form})
-
-

@@ -138,15 +138,13 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('Email_USER')
-# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
-# EMAIL_HOST_USER = 'nandinigattani9082@gmail.com'
-EMAIL_HOST_PASSWORD = 'umtbjpmabernwjqv'
 EMAIL_USE_SSL = False
+EMAIL_HOST_USER = 'nandinigattani9082@gmail.com'
+EMAIL_HOST_PASSWORD = 'alpwardqehzdkhjt'
 
 # sms
 TWILIO_ACCOUNT_SID = 'AC916570d285355980fa8406cba9c38f42'
-TWILIO_AUTH_TOKEN = '14eaf82efb0c8b93d308bebdf9147698'
+TWILIO_AUTH_TOKEN = '69122bb98b474f4d02971e829f72ed42'
 TWILIO_PHONE_NUMBER = '+12173878678'
 
 

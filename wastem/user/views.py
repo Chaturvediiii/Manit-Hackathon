@@ -1,8 +1,14 @@
-from django.shortcuts import render, redirect , get_object_or_404
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
+
+def home(request):
+    return render(request,'user/index.html')
+
+def dept(request):
+    return render(request,'user/dept.html')
 
 def register(request):
     if request.method == 'POST':
@@ -48,3 +54,6 @@ def profile(request):
 
     return render(request, 'user/profile.html', context)
 
+
+def reset(request):
+    return render (request,'user/pass_reset.html')
