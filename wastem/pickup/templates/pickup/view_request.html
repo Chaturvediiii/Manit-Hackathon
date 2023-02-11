@@ -1,4 +1,7 @@
 <h1>View Pickup Requests</h1>
 {% for pickup_request in pickup_requests %}
   <p>Location: {{ pickup_request.location }}</p>
-  <p>Date: {{ pickup_request}}</p>
+  <p>Date: {{ pickup_request.date}}</p>
+  <p>time: {{ pickup_request.time}}</p>
+  <p>status: {{ pickup_request.status}}</p>
+  {% endfor %}

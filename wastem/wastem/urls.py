@@ -21,7 +21,6 @@ from django.conf.urls.static import static
 from user import views as user_views
 
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -36,16 +35,21 @@ urlpatterns = [
     path('pass-reset/', auth_views.PasswordResetView.as_view(
         template_name='user/pass_reset.html'), name='pass-reset'),
 
-    path('pass-reset-confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(
-        template_name='user/pass_reset_confirm.html'), name='pass-reset-confirm'),
+    path('pass_reset_confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(
+        template_name='user/pass_reset_confirm.html'), name='password_reset_confirm'),
 
-    path('pass-reset/done', auth_views.PasswordResetDoneView.as_view(
-        template_name='user/pass_reset_done.html'), name='pass-reset-done'),
+    path('pass_reset/done', auth_views.PasswordResetDoneView.as_view(
+        template_name='user/pass_reset_done.html'), name='password_reset_done'),
 
-    path('pickup/', include ('pickup.urls')),
-    path('Qbin/', include ('Qbin.urls')),
-] 
+    path('pass_reset_complete/', auth_views.PasswordResetCompleteView.as_view(
+        template_name='user/pass_reset_complete.html'), name='password_reset_complete'),
+
+
+    path('pickup/', include('pickup.urls')),
+    path('Qbin/', include('Qbin.urls')),
+]
 
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'pickup',
     'Qbin',
+    # 'sms',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'wastem.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,8 +129,26 @@ MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-# LOGIN_REDIRECT_URL = 'blog-home'
+LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
+
+
+# email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('Email_USER')
+# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+# EMAIL_HOST_USER = 'nandinigattani9082@gmail.com'
+EMAIL_HOST_PASSWORD = 'umtbjpmabernwjqv'
+EMAIL_USE_SSL = False
+
+# sms
+TWILIO_ACCOUNT_SID = 'AC916570d285355980fa8406cba9c38f42'
+TWILIO_AUTH_TOKEN = '14eaf82efb0c8b93d308bebdf9147698'
+TWILIO_PHONE_NUMBER = '+12173878678'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
