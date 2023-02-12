@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'pickup',
     'Qbin',
-    'score',
+    'adminpanel',
 ]
 
 MIDDLEWARE = [
@@ -144,7 +144,7 @@ EMAIL_HOST_PASSWORD = 'alpwardqehzdkhjt'
 
 # sms
 TWILIO_ACCOUNT_SID = 'AC916570d285355980fa8406cba9c38f42'
-TWILIO_AUTH_TOKEN = '69122bb98b474f4d02971e829f72ed42'
+TWILIO_AUTH_TOKEN = '0c3a61b2cfb70f8a3fec1b6813067799'
 TWILIO_PHONE_NUMBER = '+12173878678'
 
 

@@ -13,9 +13,9 @@ class PickupRequestAdmin(admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change):
         obj.phone_number = form.cleaned_data['phone_number']
-        if(obj.status == 'A'):
+        if(obj.status == 'Accepted'):
             client = Client('AC916570d285355980fa8406cba9c38f42',
-                            '69122bb98b474f4d02971e829f72ed42')
+                            '0c3a61b2cfb70f8a3fec1b6813067799')
             message = client.messages.create(
                 to=(obj.phone_number),
                 from_="+12173878678",
@@ -26,10 +26,10 @@ class PickupRequestAdmin(admin.ModelAdmin):
         obj.save()
 
     def accept_request(self, request, queryset):
-        queryset.update(status='A')
+        queryset.update(status='Accepted')
         for obj in queryset:
             client = Client('AC916570d285355980fa8406cba9c38f42',
-                            '69122bb98b474f4d02971e829f72ed42')
+                            '0c3a61b2cfb70f8a3fec1b6813067799')
             message = client.messages.create(
                 to=(obj.phone_number),
                 from_="+12173878678",
@@ -39,17 +39,7 @@ class PickupRequestAdmin(admin.ModelAdmin):
                 request, "SMS sent successfully to %s" % obj.phone_number)
 
     def reject_request(self, request, queryset):
-        queryset.update(status='R')
-        for obj in queryset:
-            client = Client('AC916570d285355980fa8406cba9c38f42',
-                            '69122bb98b474f4d02971e829f72ed42')
-            message = client.messages.create(
-                to=(obj.phone_number),
-                from_="+12173878678",
-                body="Your request has been rejected."
-            )
-            self.message_user(
-                request, "SMS sent successfully to %s" % obj.phone_number)
+        queryset.update(status='Rejected')
 
     def has_add_permission(self, request):
         return True

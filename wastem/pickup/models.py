@@ -16,9 +16,9 @@ CHOICES = [('B', 'bio-degradable'), ('NB', 'non-biodegradable')]
 
 class PickupRequest(models.Model):
     REQUEST_STATUS = (
-        ('P', 'Pending'),
-        ('A', 'Accepted'),
-        ('R', 'Rejected'),
+        ('Pending', 'Pending'),
+        ('Accepted', 'Accepted'),
+        ('Rejected', 'Rejected'),
     )
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
@@ -26,7 +26,7 @@ class PickupRequest(models.Model):
                             default=None, null=True, blank=False)
     description = models.CharField(max_length=200, default='none')
     phone_number = models.CharField(max_length=20, default='+91')
-    status = models.CharField(max_length=1, choices=REQUEST_STATUS, default='P' , null=False)
+    status = models.CharField(max_length=10, choices=REQUEST_STATUS, default='Pending' , null=False)
     
     # is_approved = models.BooleanField(default=False)
 
