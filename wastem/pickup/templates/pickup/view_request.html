@@ -1,10 +1,12 @@
+{% extends 'Qbin/base.html' %}
+{% load crispy_forms_tags %}
+{% block content01%}
 <h1>View Pickup Requests</h1>
 
 {% for objects in pickup_request %}
 
 <p>Location: {{ objects.location }}</p>
 <p>Date: {{ objects.date }}</p>
-<p>Time: {{ objects.time }}</p>
-<p>status: {{ objects.status }}</p>
-
+<p>status : {{ objects.status }}</p>
 {% endfor %}
+{% endblock content01%}

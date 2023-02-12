@@ -1,5 +1,11 @@
+{% extends 'Qbin/base.html' %}
 {% load crispy_forms_tags %}
+{% load static %}
+{% block css %}
+<link href="{% static 'user/assests/css/register.css' %}" rel="stylesheet" type="text/css" />
+{% endblock css %}
 
+{% block content01%}
 <style>
     ul {
         padding-left: 0 !important;
@@ -30,3 +36,8 @@
         </small>
     </div>
 </div>
+
+{% endblock content01%}
+{% block js%}
+<script src="{% static 'user/assests/js/register.js' %}"></script>
+{% endblock js%}

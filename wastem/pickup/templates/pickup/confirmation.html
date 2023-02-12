@@ -1,4 +1,7 @@
-
+{% extends 'Qbin/base.html' %}
+{% load crispy_forms_tags %}
+{% block content01%}
 <h1>Pickup Request Confirmation</h1>
 <p>Your pickup request has been submitted!</p>
 <a href="{% url 'view_request' %}">view requests</a>
+{% endblock content01%}

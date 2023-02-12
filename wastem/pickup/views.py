@@ -1,6 +1,7 @@
 from twilio.rest import Client
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse ,get_object_or_404
 from .models import Location, PickupRequest
+# , ApplicationStatus
 from .forms import PickupRequestForm
 
 
@@ -48,6 +49,11 @@ def location(request):
         else:
             form = Location()
             return redirect('user/profile.html', {'form': form})
+
+
+def pickup_status(request, PickupRequest_id):
+    pickup = get_object_or_404(PickupRequest, id=PickupRequest_id)
+    return render(request, 'update_status.html', {'pickup': order})
 
 
 # def type(request):
