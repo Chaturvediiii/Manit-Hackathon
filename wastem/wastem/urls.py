@@ -44,9 +44,7 @@ urlpatterns = [
 
 
     path('', include('pickup.urls')),
-    path('', include('Qbin.urls')),
-    path('', include('adminpanel.urls')),
-]
+    path('', include('Qbin.urls')),]
 
 
 if settings.DEBUG:
