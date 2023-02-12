@@ -6,6 +6,7 @@
 {% for objects in pickup_request %}
 
 <p>Location: {{ objects.location }}</p>
+<p>Type of waste : {{ objects.type }}</p>
 <p>Date: {{ objects.date }}</p>
 <p>status : {{ objects.status }}</p>
 {% endfor %}
