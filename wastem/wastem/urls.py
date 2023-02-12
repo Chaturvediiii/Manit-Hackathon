@@ -44,7 +44,7 @@ urlpatterns = [
 
 
     path('', include('pickup.urls')),
-    path('Qbin/', include('Qbin.urls')),
+    path('', include('Qbin.urls')),
 ]
 
 
