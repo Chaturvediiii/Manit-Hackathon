@@ -1,65 +1,124 @@
 {% extends 'Qbin/base.html'%}
 {% load static %}
-{% block content01%}
+{% block content01 %}
 
-  <div class="hero">
-        
-  </div>
-
-  <div class="group1">
-
-
-  </div>
-
-
-  <div class="group2">
-   <div class="wrapper">
-    <section class="section section1">
-      <div class="leftsection1">
-        <h2>Making <br>things <br> Better .</h2>
-      </div>
-      <div class="rightsection1">
-        <p>lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur eum nemo ipsa distinctio iure, eveniet quidem non magni. Hic reiciendis fugiat quisquam odio enim maxime perferendis, soluta veniam ipsum atque.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam similique excepturi pariatur, voluptate cupiditate neque asperiores rem voluptatem, enim nisi laboriosam consequuntur sequi magni dolore provident explicabo! Minus, sit fuga!
-      </p>
-      </div>
-
-      
-    </section>
-    <section class="section section2">
-      <div class="leftsection1">
-        
-        <p>lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur eum nemo ipsa distinctio iure, eveniet quidem non magni. Hic reiciendis fugiat quisquam odio enim maxime perferendis, soluta veniam ipsum atque.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam similique excep
-         
-        </p>
-      </div>
-      <div class="rightsection1">
-        <h2>Making <br>things <br> Better .</h2>
-      </div>
-    </section>
-    <section class="section section3">
-      <h2>Section three</h2>
-    </section>
-   </div>
-  </div>
-
-
-<div class="group3">
-  <div class="right"></div>
-  <div class="left"></div>
-</div>
-
-<div class="group4">
-
+  <div class="hero"> 
+    <img src="{% static './Qbin/images/kachra.jpg' %}" alt="" > 
+   
+   </div> 
   
-</div>
+   <div class="group1"> 
+ <!-- Our working process start --> 
+ <h2>What We Provide</h2> 
+ <div class="work-container"> 
+    
+   <div class="work-card"> 
+       <div class="work-img"> 
+           <i class="fa-solid fa-truck"></i> 
+       </div> 
+       <div class="work-head"> 
+           <h4>Collection</h4> 
+       </div> 
+       <div class="work-para"> 
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, sit!Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, sit!</p> 
+       </div> 
+   </div> 
+   <div class="work-card"> 
+       <div class="work-img"> 
+           <i class="fa-solid fa-truck"></i> 
+       </div> 
+       <div class="work-head"> 
+           <h4>Collection</h4> 
+       </div> 
+       <div class="work-para"> 
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, sit!Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, sit!</p> 
+       </div> 
+   </div> 
+   
+   <div class="work-card"> 
+       <div class="work-img"> 
+           <i class="fa-solid fa-truck"></i> 
+       </div> 
+       <div class="work-head"> 
+           <h4>Collection</h4> 
+       </div> 
+       <div class="work-para"> 
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, sit!Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, sit!</p> 
+       </div> 
+   </div> 
+  
+    
+ </div> 
+   <!-- Our working process end --> 
+  
+   </div> 
+  
+ <div class="pickup"> 
+   <h2>Request a Pickup</h2> 
+   <div class="pickupc"> 
+   <div class="rightp"> 
+      <div class="pickimg"> 
+ <img src="{% static './Qbin/images/truck (1).png' %}" alt=""> 
+   </div> 
+   </div> 
+   <div class="leftp"> 
+     <h4>Our goal is to make waste management as seamless and stress-free as possible for our clients, while also promoting sustainability and environmental responsibility.A system that ensures timely and reliable waste pickup services. Our services are designed to meet the needs of both residential and commercial clients, and we are committed to providing the highest level of customer satisfaction.</h4> 
+ <button class="button-41" role="button" ><a href="{% url 'create_request' %}">PICKUP REQUEST </a></button> 
+   </div></div> 
+  </div> 
+  
+  
+  
+  
+ </div> 
+  
+   <div class="group2"> 
+    <div class="wrapper"> 
+     <section class="section section1"> 
+       <div class="leftsection1"> 
+         <h2>Making <br>things <br> Better .</h2> 
+       </div> 
+       <div class="rightsection1"> 
+         <p>Welcome to mybinbuddy , your one-stop solution for waste management and pickup services. We are dedicated to providing the best and most efficient waste management services to our clients.Our goal is to make waste management as seamless and stress-free as possible for our clients, while also promoting sustainability and environmental responsibility. 
+           A system that ensures timely and reliable waste pickup services. Our services are designed to meet the needs of both residential and commercial clients, and we are committed to providing the highest level of customer satisfaction. 
+       </p> 
+       <img src="{% static './Qbin/images/planet1.png' %}" alt="" height="270px" width="250px"> 
+       </div> 
+  
+        
+     </section> 
+     <section class="section section2"> 
+       <div class="leftsection1"> 
+          
+         <p>We at MyBinBuddy strive to provide our clients with the most efficient, affordable, and convenient waste management services. We are dedicated to ensuring that every customer feels comfortable when using our system. More importantly, we are committed to promoting sustainability through our work ethic and environmental responsibility. 
+         </p> 
+         <img src="{% static './Qbin/images/planet-removebg-preview.png' %}" width="350px" height="350px"> 
+       </div> 
+       <div class="rightsection1"> 
+         <span><h2>Making <br>things <br> Better .</h2></span> 
+       </div> 
+     </section> 
+    </div> 
+   </div> 
+  
+  
+ <div class="group3"> 
+    
+   <div class="left"> 
+ <h2>Recycling a single plastic bottle can conserve enough energy to light a 60W bulb upto 6 hours. </h2></div> 
+   <div class="right"> 
+     <img 
+     src="{% static './Qbin/images/bottle.png' %}"> 
+       </div> 
+     </div> 
+      
+     <div class="group3"> 
+       <div class="right"> 
+         <img src="{% static './Qbin/images/boat (1).png' %}"> 
+       </div> 
+       <div class="left"> 
+     <h2>Global waste is expected to grow to 3.4 billion tonnes by 2050, more than double population growth over the same period. </h2></div> 
+        
+     </div>
 
-
-<div class="group5">
-  <div class="right5"></div>
-  <div class="left5"></div>
-</div>
-
-{% endblock content01%}
+{% endblock content01 %}

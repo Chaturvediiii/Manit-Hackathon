@@ -1,0 +1,107 @@
+{% extends 'Qbin/base.html' %} 
+{% load crispy_forms_tags %} 
+{% load static %} 
+{% block css %} 
+<link href="{% static 'user/assests/css/panel.css' %}" rel="stylesheet" type="text/css" /> 
+{% endblock css %} 
+ 
+{% block content01%} 
+    <div class="side-menu"> 
+        <div class="brand-name"> 
+            <h1>myBinBuddy</h1> 
+        </div> 
+        <ul> 
+            <li><img src="dashboard (2).png" alt="">&nbsp; <span>Dashboard</span> </li> 
+            <li><img src="reading-book (1).png" alt="">&nbsp;<span>Students</span> </li> 
+            <li><img src="teacher2.png" alt="">&nbsp;<span>Teachers</span> </li> 
+            <li><img src="school.png" alt="">&nbsp;<span>Schools</span> </li> 
+            <li><img src="payment.png" alt="">&nbsp;<span>Income</span> </li> 
+            <li><img src="help-web-button.png" alt="">&nbsp; <span>Help</span></li> 
+            <li><img src="settings.png" alt="">&nbsp;<span>Settings</span> </li> 
+        </ul> 
+    </div> 
+    <div class="container"> 
+ 
+        <div class="content"> 
+ 
+            <div class="content-2"> 
+                <div class="recent-payments"> 
+                    <div class="title"> 
+                        <h2>Recent Payments</h2> 
+                        <a href="#" class="btn">View All</a> 
+                    </div> 
+                    <table> 
+                        <tr> 
+                            <th>Name</th> 
+                            <th>School</th> 
+                            <th>Amount</th> 
+                            <th>Option</th> 
+                        </tr> 
+                        <tr> 
+                            <td>John Doe</td> 
+                            <td>St. James College</td> 
+                            <td>$120</td> 
+                            <td><a href="#" class="btn">View</a></td> 
+                        </tr> 
+                        <tr> 
+                            <td>John Doe</td> 
+                            <td>St. James College</td> 
+                            <td>$120</td> 
+                            <td><a href="#" class="btn">View</a></td> 
+                        </tr> 
+                        <tr> 
+                            <td>John Doe</td> 
+                            <td>St. James College</td> 
+                            <td>$120</td> 
+                            <td><a href="#" class="btn">View</a></td> 
+                        </tr> 
+                        <tr> 
+                            <td>John Doe</td> 
+                            <td>St. James College</td> 
+                            <td>$120</td> 
+                            <td><a href="#" class="btn">View</a></td> 
+                        </tr> 
+                        <tr> 
+                            <td>John Doe</td> 
+                            <td>St. James College</td> 
+                            <td>$120</td> 
+                            <td><a href="#" class="btn">View</a></td> 
+                        </tr> 
+                        <tr> 
+                            <td>John Doe</td> 
+                            <td>St. James College</td> 
+                            <td>$120</td> 
+                            <td><a href="#" class="btn">View</a></td> 
+                        </tr> 
+                    </table> 
+                </div> 
+ 
+            </div> 
+        </div> 
+    </div> 
+ 
+    {% endblock content01%}
+    {% block js%}
+    <script>
+        export default {
+          data() {
+            return {
+              PickupRequests: []
+            };
+          },
+          created() {
+            $.ajax({
+              url: '/get_pickuprequests/',
+              type: 'GET',
+              dataType: 'json',
+              success: (data) => {
+                this.PickupRequest = data.PickupRequests;
+              },
+              error: (error) => {
+                console.error(error);
+              }
+            });
+          }
+        };
+        </script>
+{% endblock js%}

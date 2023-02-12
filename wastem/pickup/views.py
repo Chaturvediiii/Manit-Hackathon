@@ -5,6 +5,7 @@ from .models import Location, PickupRequest
 from .forms import PickupRequestForm
 
 
+
 def send_sms(request):
     client = Client('AC916570d285355980fa8406cba9c38f42',
                     '69122bb98b474f4d02971e829f72ed42')
@@ -23,7 +24,8 @@ def create_pickup_request(request):
         form = PickupRequestForm(request.POST)
         if form.is_valid():
             pickup_request = form.save()
-            send_sms(request)
+           
+          
             return render(request, 'pickup/confirmation.html')
     else:
         form = PickupRequestForm()
@@ -55,13 +57,3 @@ def pickup_status(request, PickupRequest_id):
     pickup = get_object_or_404(PickupRequest, id=PickupRequest_id)
     return render(request, 'update_status.html', {'pickup': order})
 
-
-# def type(request):
-#     if request.method == 'POST':
-#         form = type(request.POST)
-#         if form.is_valid():
-#             type = form.save()
-#             return redirect('pickup/create_request.html', {'form': form})
-#         else:
-#             form = type()
-#             return redirect('user/profile.html', {'form': form})

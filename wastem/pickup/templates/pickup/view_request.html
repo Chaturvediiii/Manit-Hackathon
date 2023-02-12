@@ -1,12 +1,30 @@
 {% extends 'Qbin/base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
+{% block css%}
+<link href="{% static './Qbin/css/request.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock css %}
+
 {% block content01%}
 <h1>View Pickup Requests</h1>
 
+
 {% for objects in pickup_request %}
 
-<p>Location: {{ objects.location }}</p>
-<p>Date: {{ objects.date }}</p>
-<p>status : {{ objects.status }}</p>
+<div class="testimonials"> 
+    <figure class="snip1390"> 
+         
+        <figcaption> 
+            <p>Location: {{ objects.location }}</p>
+            <p>Type of waste : {{ objects.type }}</p>
+            <p>Date: {{ objects.date }}</p>
+            <p>status : {{ objects.status }}</p>
+
+        </figcaption> 
+      </figure> 
+
+</div>
+
+
 {% endfor %}
 {% endblock content01%}
